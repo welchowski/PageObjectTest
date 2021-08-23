@@ -28,5 +28,8 @@ class BasketPage(BasePage):
         print("price=" + price + " msg_prise="+msg_price)
         assert price in msg_price, "price difference"
 
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*BasketPageLocators.MSG_PRODUCT_ADDED), "Success message is presented, but should not be"
+
         
 

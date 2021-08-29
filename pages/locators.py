@@ -25,3 +25,8 @@ class ProductPageLocators():
 class BasketPageLocators():
     MSG_PRODUCT_ADDED = (By.CSS_SELECTOR, ".alertinner :nth-child(1)")
     PRICE_MSG = (By.CSS_SELECTOR, ".alert-info strong")
+
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+

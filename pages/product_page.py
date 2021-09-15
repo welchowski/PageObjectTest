@@ -13,9 +13,6 @@ class ProductPage(BasePage):
         assert not self.is_element_present(*ProductPageLocators.MSG_PRODUCT_ADDED), \
             "Success message is presented"
 
-
-class BasketPage(BasePage):
-
     def should_be_msg_same_produsct_added_to_basket(self):
         name = self.browser.find_element(*ProductPageLocators.NAME_OF_PRODUCT).text
         print(name)
@@ -37,5 +34,3 @@ class BasketPage(BasePage):
         assert self.is_disappeared(*BasketPageLocators.MSG_PRODUCT_ADDED), \
             "Success message is presented, but should not be"
 
-# def should_be_is_not_element_present(self):
-# assert not self.is_element_present(*ProductPageLocators.MSG_PRODUCT_ADDED), "Success message is presented, but will not be"

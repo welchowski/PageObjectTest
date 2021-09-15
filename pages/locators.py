@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-import pytest
+
 
 
 class MainPageLocators():
@@ -25,8 +25,13 @@ class ProductPageLocators():
 class BasketPageLocators():
     MSG_PRODUCT_ADDED = (By.CSS_SELECTOR, ".alertinner :nth-child(1)")
     PRICE_MSG = (By.CSS_SELECTOR, ".alert-info strong")
+    BASKET_INFO_OF_PRODUCT = (By.CSS_SELECTOR, ".basket-title hidden-xs")
+    BASKET_IS_EMPTY_MSG = (By.CSS_SELECTOR, "p :nth-child(1)")
 
+#
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    BASKET_BOTTOM = (By.CSS_SELECTOR, "span :nth-child(1)")
+
 

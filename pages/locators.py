@@ -1,7 +1,6 @@
 from selenium.webdriver.common.by import By
 
 
-
 class MainPageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LINK = "http://selenium1py.pythonanywhere.com"
@@ -11,6 +10,10 @@ class LoginPageLocators():
     REGISTR_FORM = (By.CSS_SELECTOR, "#register_form")
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    REGESTRATION_EMAIL = (By.NAME, "registration-email")
+    REGESTRATION_PASSWORD = (By.NAME, "registration-password1")
+    CONFIRM_PASSWORD = (By.NAME, "registration-password2")
+    REGESTRATION_BUTTON = (By.NAME, "registration_submit")
 
 
 class ProductPageLocators():
@@ -28,10 +31,9 @@ class BasketPageLocators():
     BASKET_INFO_OF_PRODUCT = (By.CSS_SELECTOR, ".basket-title hidden-xs")
     BASKET_IS_EMPTY_MSG = (By.CSS_SELECTOR, "p :nth-child(1)")
 
-#
+
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     BASKET_BOTTOM = (By.CSS_SELECTOR, "span :nth-child(1)")
-
-
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")

@@ -9,6 +9,7 @@ py==1.10.0
 pyparsing==2.4.7
 pytest==6.2.4
 pytest-rerunfailures==10.1
+python==3.9.6
 selenium==3.14.0
 toml==0.10.2
 urllib3==1.26.6

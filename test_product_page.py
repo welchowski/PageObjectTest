@@ -69,7 +69,7 @@ def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     page.basket_should_not_be_full()
     page.should_be_empty_basket_massage()
 
-
+#test
 @pytest.mark.login
 class TestUserAddToBasketFromProductPage():
     link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"

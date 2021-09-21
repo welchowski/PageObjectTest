@@ -1,6 +1,5 @@
 from .base_page import BasePage
-from .locators import BasketPageLocators
-from .locators import ProductPageLocators
+from .locators import BasketPageLocators, LoginPageLocators, ProductPageLocators, MainPageLocators
 
 
 class ProductPage(BasePage):
@@ -25,6 +24,11 @@ class ProductPage(BasePage):
         print(self.browser.find_element(*ProductPageLocators.PRICE).text)
         print("price=" + price + " msg_prise=" + msg_price)
         assert price in msg_price, "price difference"
+
+    def should_go_to_login_page_from_product_page(self):
+        login_button = self.browser.find_element(*MainPageLocators.LOGIN_LINK)
+        login_button.click()
+        assert self.is_element_present(*LoginPageLocators.LOGIN_FORM), "register form not found"
 
     def should_not_be_success_message_by_is_not_element_present(self):
         assert self.is_not_element_present(*BasketPageLocators.MSG_PRODUCT_ADDED), \

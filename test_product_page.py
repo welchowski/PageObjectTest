@@ -5,7 +5,7 @@ from .pages.locators import ProductPageLocators, MainPageLocators
 from .pages.login_page import LoginPage
 from .pages.product_page import ProductPage
 
-
+@pytest.mark.need_review
 def test_guest_can_add_product_to_basket(browser):
     link = f"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer1"
     print(link)
@@ -27,6 +27,14 @@ def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
 
     page_busket = ProductPage(browser, browser.current_url)
     page_busket.should_not_be_success_message_by_is_not_element_present()
+
+
+@pytest.mark.need_review
+def test_guest_can_go_to_login_page_from_product_page(browser):
+    link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
+    page = ProductPage(browser, link)
+    page.open()
+    page.should_go_to_login_page_from_product_page()
 
 
 def test_guest_cant_see_success_message(browser):
@@ -75,6 +83,7 @@ class TestUserAddToBasketFromProductPage():
         login_page.register_new_user(email, self.password, browser)
         login_page.should_be_authorized_user()
 
+    @pytest.mark.need_review
     def test_user_can_add_product_to_basket(self, browser):
         page = ProductPage(browser, self.link)
         page.open()
@@ -84,6 +93,7 @@ class TestUserAddToBasketFromProductPage():
         page_basket.should_be_msg_same_produsct_added_to_basket()
         page_basket.should_be_single_price_with_product_added()
 
+    @pytest.mark.need_review
     def test_user_cant_see_success_message(self, browser):
         page = ProductPage(browser, self.link)
         page.open()
